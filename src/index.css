@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+@import "@fontsource-variable/archivo";
+@import "@fontsource-variable/archivo/wght-italic.css";
+@import "@fontsource-variable/fraunces";
+@import "@fontsource-variable/fraunces/wght-italic.css";
+@import "@fontsource/jetbrains-mono/400.css";
+@import "@fontsource/jetbrains-mono/500.css";
+
+@theme {
+  /* ---- color ---- */
+  --color-paper: #f8f7f4;
+  --color-ink: #0d0d0c;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-line: #0d0d0c1a;
+  --color-line-strong: #0d0d0c40;
+  --color-mute: #6f6e69;
+  --color-mute-on-ink: #a3a29c;
+
+  /* ---- type ---- */
+  --font-sans: "Archivo Variable", "Archivo", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Fraunces Variable", "Fraunces", ui-serif, Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  --text-micro: 0.6875rem;
+  --text-micro--line-height: 1.4;
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.45;
+  --text-sm: 0.9375rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1.0625rem;
+  --text-base--line-height: 1.6;
+  --text-md: 1.25rem;
+  --text-md--line-height: 1.5;
+  --text-lg: 1.625rem;
+  --text-lg--line-height: 1.35;
+
+  --text-xl: clamp(1.75rem, 1.4rem + 1.5vw, 2.5rem);
+  --text-xl--line-height: 1.1;
+  --text-2xl: clamp(2.25rem, 1.6rem + 2.8vw, 3.75rem);
+  --text-2xl--line-height: 1.04;
+  --text-3xl: clamp(3rem, 1.8rem + 5vw, 5.75rem);
+  --text-3xl--line-height: 0.98;
+  --text-display: clamp(3.75rem, 1.2rem + 10vw, 8.5rem);
+  --text-display--line-height: 0.94;
+  --text-display-xl: clamp(4.5rem, -0.6rem + 17vw, 13.5rem);
+  --text-display-xl--line-height: 0.86;
+
+  /* ---- layout ---- */
+  --gutter: clamp(1.25rem, 1rem + 2vw, 2.75rem);
+  --rhythm: clamp(6rem, 3rem + 10vw, 13rem);
+  --rhythm-sm: clamp(3rem, 1.5rem + 4vw, 6rem);
+
+  --animate-marquee: marquee 28s linear infinite;
+  --animate-scrollcue: scrollcue 1.8s ease-in-out infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes scrollcue {
+    0%,
+    100% {
+      transform: scaleY(1);
+      opacity: 0.5;
+    }
+    50% {
+      transform: scaleY(0.4);
+      opacity: 1;
+    }
+  }
+}
+
+@layer base {
+  * {
+    border-color: var(--color-line);
+  }
+
+  html {
+    background: var(--color-paper);
+    color-scheme: light;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01" 1, "cv01" 1;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--color-ink);
+    color: var(--color-paper);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 3px;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@layer components {
+  .drop-cap {
+    float: left;
+    font-family: var(--font-serif);
+    font-size: 3.6em;
+    line-height: 0.78;
+    font-weight: 600;
+    padding-right: 0.09em;
+    padding-top: 0.06em;
+  }
+}
