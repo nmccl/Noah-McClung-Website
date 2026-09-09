@@ -1,3 +1,52 @@
+/**
+ * Writing archive.
+ *
+ * How to add a new article:
+ *
+ * 1. Add an object to the `writing` array below (newest first).
+ * 2. Fill in the fields:
+ *      number - two-digit string, next in sequence ('01', '02', ...)
+ *      slug   - URL segment, becomes /writing/<slug>
+ *      title  - the headline
+ *      dek    - one-sentence subhead, shown under the title and in the archive list
+ *      date   - 'YYYY-MM-DD'
+ *      body   - the article text (see markdown syntax below)
+ * 3. Save. The article is live at /writing/<slug> and listed on /writing
+ *    and the homepage automatically. Reading time is calculated from the
+ *    word count, so there's nothing to fill in for that.
+ *
+ * `body` markdown syntax (deliberately small — see src/lib/markdown.tsx):
+ *
+ *   Paragraphs   - separate with a blank line.
+ *   **bold**     - double asterisks.
+ *   *italic*     - single asterisks.
+ *   ## Heading   - a line starting with "## " becomes a subheading.
+ *   > Quote      - a line starting with "> " becomes a pull quote,
+ *                  breaking across both columns on wide screens.
+ *
+ *   The very first letter of the first paragraph gets a drop cap
+ *   automatically — no markup needed for that.
+ *
+ * Template (copy the block below, paste it as a new array entry, fill it in):
+ *
+ * {
+ *   number: '01',
+ *   slug: 'your-article-slug',
+ *   title: 'Your Title',
+ *   dek: 'One sentence describing what this is about.',
+ *   date: '2026-01-01',
+ *   body: `First paragraph. This is where the drop cap goes automatically.
+ *
+ * Second paragraph, with **bold** and *italic* if you want them.
+ *
+ * > A pulled-out line that reads as a quote.
+ *
+ * ## An optional subheading
+ *
+ * More paragraphs after the subheading.`,
+ * },
+ */
+
 export type Article = {
   number: string
   slug: string
@@ -7,25 +56,4 @@ export type Article = {
   body: string
 }
 
-export const writing: Article[] = [
-  {
-    number: '01',
-    slug: 'on-momentum',
-    title: 'On Momentum',
-    dek: 'Building solo software is mostly a war against your own attention span.',
-    date: '2026-09-01',
-    body: `Every indie project starts the same way: an idea shows up uninvited, usually while doing something else, and won't leave. The only cure is to build it. That's the fun part. The hard part comes later, somewhere around week three, when the idea has turned into a few hundred files and the original excitement has to be replaced with something more durable.
-
-I've come to think momentum is the actual product of solo development — not the app, not the code, but whether you're still moving on day forty. **Motivation is a bad engine.** It's strong at the start and gone by Tuesday. What holds up is smaller and duller: a habit of opening the project even on days you don't feel like it, and a habit of shipping *something* — a fixed bug, a cleaner screen, a deleted feature — every time you do.
-
-> The work doesn't get easier. You just get better at doing it anyway.
-
-Working alone also means there's no one to notice if you drift. No standup, no reviewer, no one asking why a feature took three weeks longer than it should have. That's the appeal of building solo, and it's also the risk — the only feedback loop is the one you build for yourself. I've found the simplest version works best: keep a running log of what shipped, not what's planned. Plans are cheap. A dated line that says *what changed* is the only thing that proves the project is actually moving.
-
-## The rebuild instinct
-
-There's a particular moment in every project where the right move is to throw out a chunk of working code because you finally understand the problem better than you did when you wrote it. It never feels efficient in the moment. It's usually correct. The version of the code written with real understanding is almost always smaller than the version written while still figuring things out.
-
-None of this is a system, exactly. It's closer to a set of habits that keep the project alive long enough to find out if it was a good idea in the first place. Most days, that's the whole job.`,
-  },
-]
+export const writing: Article[] = []

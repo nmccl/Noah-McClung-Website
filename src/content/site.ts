@@ -8,7 +8,7 @@ export const site = {
     github: 'https://github.com/nmccl',
     x: 'https://x.com/imnoahmcclung',
     instagram: 'https://instagram.com/imnoahmcclung',
-    youtube: 'https://youtube.com/@imnoahmcclung',
+    youtube: 'https://youtube.com/@imnoah-mcclung',
   },
 } as const
 

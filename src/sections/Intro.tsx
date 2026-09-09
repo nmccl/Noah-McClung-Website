@@ -8,7 +8,7 @@ export function Intro() {
   const reduced = useReducedMotion()
 
   return (
-    <section className="flex min-h-[100svh] flex-col justify-between px-[var(--gutter)] pt-28 pb-8 md:pt-32">
+    <section className="flex min-h-[100svh] flex-col justify-between px-[var(--gutter)] pt-28 pb-8 md:pt-22">
       <Reveal delay={0.1}>
         <Meta
           items={[

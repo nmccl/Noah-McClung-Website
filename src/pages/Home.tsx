@@ -1,6 +1,5 @@
 import { Intro } from '@/sections/Intro'
-import { Currently } from '@/sections/Currently'
-import { WorkSection } from '@/sections/WorkSection'
+import { NowWorkingOn } from '@/sections/NowWorkingOn'
 import { ArchiveTeaser } from '@/sections/ArchiveTeaser'
 import { AboutTeaser } from '@/sections/AboutTeaser'
 import { channel } from '@/content/watch'
@@ -9,8 +8,15 @@ export function Home() {
   return (
     <>
       <Intro />
-      <Currently />
-      <WorkSection />
+      <NowWorkingOn />
+      <ArchiveTeaser
+        number="01"
+        label="Work"
+        title="Work"
+        description="Software, built independently."
+        linkLabel="View work"
+        linkHref="/work"
+      />
       <ArchiveTeaser
         number="02"
         label="Writing"
