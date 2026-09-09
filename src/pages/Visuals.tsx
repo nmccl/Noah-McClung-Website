@@ -2,21 +2,21 @@ import { ArchivePage } from '@/components/layout/ArchivePage'
 import { visuals } from '@/content/visuals'
 
 function VisualsPlaceholder() {
-  const tiles = Array.from({ length: 6 }, (_, i) => i + 1)
+  /* const tiles = Array.from({ length: 6 }, (_, i) => i + 1) */
 
   return (
     <div>
       <p className="mb-8 font-mono text-xs tracking-[0.06em] text-mute uppercase">
-        Layout preview — no images published yet
+         no images published yet
       </p>
       <div className="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-6">
-        {tiles.map((n) => (
+        {visuals.map((visual) => (
           <div
-            key={n}
+            key={visual.slug}
             className="flex aspect-[4/5] items-center justify-center border border-dashed border-line-strong"
           >
             <span className="font-mono text-xs tracking-[0.06em] text-mute uppercase">
-              {String(n).padStart(2, '0')}
+              {visual.caption}
             </span>
           </div>
         ))}
