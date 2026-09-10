@@ -9,7 +9,7 @@
 
 @theme {
   /* ---- color ---- */
-  --color-paper: #ffffff;
+  --color-paper: #f8f7f4;
   --color-ink: #0d0d0c;
   --color-black: #000000;
   --color-white: #ffffff;
@@ -88,7 +88,7 @@
   }
 
   body {
-    background-color: var(--color-paper);
+    background-color: var(--color-white );
     color: var(--color-ink);
     font-family: var(--font-sans);
     font-feature-settings: "ss01" 1, "cv01" 1;
@@ -108,17 +108,6 @@
 
   a {
     color: inherit;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-      animation-duration: 0.001ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.001ms !important;
-      scroll-behavior: auto !important;
-    }
   }
 }
 

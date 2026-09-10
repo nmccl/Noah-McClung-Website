@@ -1,14 +1,12 @@
-import { motion, useReducedMotion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { site } from '@/content/site'
 import { RevealLines, Reveal } from '@/components/editorial/Reveal'
 import { Meta } from '@/components/editorial/Meta'
 import { Rule } from '@/components/editorial/Rule'
 
 export function Intro() {
-  const reduced = useReducedMotion()
-
   return (
-    <section className="flex min-h-[100svh] flex-col justify-between px-[var(--gutter)] pt-28 pb-8 md:pt-22">
+    <section className="flex min-h-[100svh] flex-col justify-between px-[var(--gutter)] pt-28 pb-8 md:pt-32">
       <Reveal delay={0.1}>
         <Meta
           items={[
@@ -45,13 +43,13 @@ export function Intro() {
         </Reveal>
 
         <motion.div
-          initial={reduced ? undefined : { opacity: 0 }}
+          initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.9 }}
           className="col-span-4 flex items-center gap-3 font-mono text-micro tracking-[0.14em] text-mute uppercase md:col-span-3 md:col-start-10 md:justify-self-end"
         >
           <span
-            className={reduced ? 'h-8 w-px bg-line-strong' : 'h-8 w-px origin-top bg-line-strong animate-scrollcue'}
+            className="h-8 w-px origin-top bg-line-strong animate-scrollcue"
             aria-hidden="true"
           />
           <span>Scroll</span>

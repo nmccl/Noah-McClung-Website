@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { Link, useLocation } from 'react-router-dom'
 import { nav, site } from '@/content/site'
 import { useNav } from '@/lib/nav-context'
@@ -9,7 +9,6 @@ const EASE = [0.16, 1, 0.3, 1] as const
 export function IndexOverlay() {
   const { isOpen, close } = useNav()
   const location = useLocation()
-  const reduced = useReducedMotion()
 
   useEffect(() => {
     close()
@@ -35,7 +34,7 @@ export function IndexOverlay() {
           initial={{ clipPath: 'inset(0 0 100% 0)' }}
           animate={{ clipPath: 'inset(0 0 0% 0)' }}
           exit={{ clipPath: 'inset(0 0 100% 0)' }}
-          transition={{ duration: reduced ? 0.2 : 0.65, ease: EASE }}
+          transition={{ duration: 0.65, ease: EASE }}
         >
           <nav aria-label="Primary">
             <ol>
@@ -44,7 +43,7 @@ export function IndexOverlay() {
                   <motion.div
                     initial={{ opacity: 0, y: 16 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: reduced ? 0 : 0.15 + i * 0.06, ease: EASE }}
+                    transition={{ duration: 0.5, delay: 0.15 + i * 0.06, ease: EASE }}
                   >
                     <Link
                       to={item.to}

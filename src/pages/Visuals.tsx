@@ -5,23 +5,23 @@ function VisualsPlaceholder() {
   /* const tiles = Array.from({ length: 6 }, (_, i) => i + 1) */
 
   return (
-    <div>
+    <section>
       <p className="mb-8 font-mono text-xs tracking-[0.06em] text-mute uppercase">
-         no images published yet
+        no images published yet
       </p>
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-6">
+      <section className="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-6">
         {visuals.map((visual) => (
-          <div
+          <article
             key={visual.slug}
             className="flex aspect-[4/5] items-center justify-center border border-dashed border-line-strong"
           >
             <span className="font-mono text-xs tracking-[0.06em] text-mute uppercase">
               {visual.caption}
             </span>
-          </div>
+          </article>
         ))}
-      </div>
-    </div>
+      </section>
+    </section>
   )
 }
 
