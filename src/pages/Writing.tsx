@@ -35,7 +35,7 @@ export function Writing() {
           </Link>
         </li>
       )}
-      emptyMessage="Nothing published yet. First entry pending."
+      emptyMessage="Nothing published yet."
     />
   )
 }

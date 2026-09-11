@@ -57,7 +57,7 @@ export function ArticlePage({
         <Rule className="mb-14" />
         <ArticleBody
           content={body}
-          className="md:columns-2 md:gap-[var(--gutter)] [&>p]:break-inside-avoid"
+          className="md:columns-2 md:gap-[var(--gutter)]"
         />
       </div>
 
