@@ -1,9 +1,73 @@
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Kicker } from '@/components/editorial/Kicker'
 import { Rule } from '@/components/editorial/Rule'
 import { Meta } from '@/components/editorial/Meta'
 import { Reveal, RevealLines } from '@/components/editorial/Reveal'
 import { work } from '@/content/work'
+
+const screenshots = [
+  '/images/preflight/screenshot-1.jpg',
+  '/images/preflight/screenshot-2.jpg',
+  '/images/preflight/screenshot-3.jpg',
+  '/images/preflight/screenshot-4.jpg',
+  '/images/preflight/screenshot-5.jpg',
+]
+
+function ScreenshotSlideshow() {
+  const [current, setCurrent] = useState(0)
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setCurrent((c) => (c + 1) % screenshots.length)
+    }, 4000)
+    return () => clearInterval(id)
+  }, [current])
+
+  const prev = () => setCurrent((c) => (c - 1 + screenshots.length) % screenshots.length)
+  const next = () => setCurrent((c) => (c + 1) % screenshots.length)
+
+  return (
+    <div className="relative aspect-[16/10] w-full overflow-hidden border border-line md:aspect-[16/8]">
+      {screenshots.map((src, i) => (
+        <img
+          key={src}
+          src={src}
+          alt={`PreFlight screenshot ${i + 1}`}
+          className={`absolute inset-0 h-full w-full object-cover object-top transition-opacity duration-700 ${i === current ? 'opacity-100' : 'opacity-0'}`}
+        />
+      ))}
+      <span className="absolute top-6 left-6 z-10 h-3 w-3 border-t border-l border-paper/70" />
+      <span className="absolute top-6 right-6 z-10 h-3 w-3 border-t border-r border-paper/70" />
+      <span className="absolute bottom-6 left-6 z-10 h-3 w-3 border-b border-l border-paper/70" />
+      <span className="absolute right-6 bottom-6 z-10 h-3 w-3 border-r border-b border-paper/70" />
+      <button
+        onClick={prev}
+        aria-label="Previous screenshot"
+        className="absolute left-4 top-1/2 z-10 -translate-y-1/2 px-2 py-3 font-mono text-xs text-paper/50 transition-colors hover:text-paper"
+      >
+        ←
+      </button>
+      <button
+        onClick={next}
+        aria-label="Next screenshot"
+        className="absolute right-4 top-1/2 z-10 -translate-y-1/2 px-2 py-3 font-mono text-xs text-paper/50 transition-colors hover:text-paper"
+      >
+        →
+      </button>
+      <div className="absolute bottom-5 left-1/2 z-10 flex -translate-x-1/2 gap-1.5">
+        {screenshots.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            aria-label={`Go to screenshot ${i + 1}`}
+            className={`h-px w-6 transition-colors duration-300 ${i === current ? 'bg-paper' : 'bg-paper/30'}`}
+          />
+        ))}
+      </div>
+    </div>
+  )
+}
 
 export function Preflight() {
   const project = work.find((item) => item.slug === 'preflight')!
@@ -47,20 +111,9 @@ export function Preflight() {
 
       <div className="mt-16 px-[var(--gutter)]">
         <Reveal y={40}>
-          <div className="relative aspect-[16/10] w-full overflow-hidden border border-line md:aspect-[16/8]">
-            <img
-              src="/images/preflight/report.jpg"
-              alt="PreFlight showing a review report with findings, evidence, and suggested fixes."
-              className="h-full w-full object-cover object-top"
-            />
-            <span className="absolute top-6 left-6 h-3 w-3 border-t border-l border-paper/70" />
-            <span className="absolute top-6 right-6 h-3 w-3 border-t border-r border-paper/70" />
-            <span className="absolute bottom-6 left-6 h-3 w-3 border-b border-l border-paper/70" />
-            <span className="absolute right-6 bottom-6 h-3 w-3 border-r border-b border-paper/70" />
-          </div>
+          <ScreenshotSlideshow />
           <p className="mt-3 font-mono text-xs tracking-[0.04em] text-mute uppercase">
-            A review report — findings organized by severity, each with the reasoning
-            and a suggested fix.
+            PreFlight in action — swipe through to see the full experience.
           </p>
         </Reveal>
       </div>
