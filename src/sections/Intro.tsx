@@ -37,7 +37,7 @@ export function Intro() {
           className="col-span-4 md:col-span-6 md:col-start-1 lg:col-span-5"
         >
           <p className="font-serif text-lg leading-[1.3] text-ink/80 italic">
-            Indie developer building software for Apple platforms — with a standing
+            Indie developer building products for Apple platforms, — with a standing
             interest in photography, video, music, and writing on the side.
           </p>
         </Reveal>

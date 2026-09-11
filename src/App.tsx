@@ -8,6 +8,9 @@ import { Footer } from '@/components/layout/Footer'
 import { Home } from '@/pages/Home'
 import { Work } from '@/pages/Work'
 import { Preflight } from '@/pages/work/Preflight'
+import { OneFocus } from '@/pages/work/OneFocus'
+import { Haze } from '@/pages/work/Haze'
+import { PomodoroFocus } from '@/pages/work/PomodoroFocus'
 import { Writing } from '@/pages/Writing'
 import { WritingArticle } from '@/pages/writing/Article'
 import { Visuals } from '@/pages/Visuals'
@@ -34,6 +37,9 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/work" element={<Work />} />
             <Route path="/work/preflight" element={<Preflight />} />
+            <Route path="/work/onefocus" element={<OneFocus />} />
+            <Route path="/work/haze" element={<Haze />} />
+            <Route path="/work/pomodorofocus" element={<PomodoroFocus />} />
             <Route path="/writing" element={<Writing />} />
             <Route path="/writing/:slug" element={<WritingArticle />} />
             <Route path="/visuals" element={<Visuals />} />

@@ -8,7 +8,7 @@ export function Footer() {
         <Rule invert className="mb-8" />
         <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
           <p className="max-w-md font-sans text-lg leading-[1.3] tracking-tight">
-            Currently building in Las Vegas. Open to hearing what you're working on.
+            Currently building in Las Vegas. Open to working with you, I'm only an email away!
           </p>
           <div className="flex flex-col gap-4 font-mono text-xs tracking-[0.08em] text-mute-on-ink uppercase md:items-end">
             <a href={`mailto:${site.email}`} className="text-paper hover:text-mute-on-ink">
