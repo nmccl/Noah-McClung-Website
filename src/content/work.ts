@@ -73,7 +73,7 @@ export const work: WorkItem[] = [
     category: 'iOS',
     title: 'HazeOS',
     tagline: 'Weather, redefined.',
-    url: 'https://www.hazeos.info',
+    url: 'https://hazeos.info',
     description:
       'HazeOS is a minimalistic weather app that trades data overload for a calm, visually immersive experience. Real-time conditions, thoughtfully presented.',
     year: 2025,
