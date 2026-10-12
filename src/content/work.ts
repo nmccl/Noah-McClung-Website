@@ -71,11 +71,11 @@ export const work: WorkItem[] = [
     number: '03',
     slug: 'haze',
     category: 'iOS',
-    title: 'HazeOS',
-    tagline: 'Weather, redefined.',
+    title: 'Haze',
+    tagline: 'Immersive Weather',
     url: 'https://hazeos.info',
     description:
-      'HazeOS is a minimalistic weather app that trades data overload for a calm, visually immersive experience. Real-time conditions, thoughtfully presented.',
+      'Haze is a minimalistic weather app that trades data overload for a calm, visually immersive experience. Real-time conditions, thoughtfully presented.',
     year: 2025,
     pillars: [
       {

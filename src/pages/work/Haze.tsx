@@ -64,7 +64,7 @@ export function Haze() {
           <div className="relative aspect-[16/10] w-full overflow-hidden border border-line bg-paper md:aspect-[16/8]">
             <img
               src="/images/haze/icon.png"
-              alt="HazeOS app icon — a minimalistic weather app for iPhone."
+              alt="Haze app icon — a minimalistic weather app for iPhone."
               className="h-full w-full object-contain object-center p-16"
             />
             <span className="absolute top-6 left-6 h-3 w-3 border-t border-l border-paper/70" />
@@ -73,7 +73,7 @@ export function Haze() {
             <span className="absolute right-6 bottom-6 h-3 w-3 border-r border-b border-paper/70" />
           </div>
           <p className="mt-3 font-mono text-xs tracking-[0.04em] text-mute uppercase">
-            HazeOS — a minimalistic weather experience for iPhone.
+            Haze — a minimalistic weather experience for iPhone.
           </p>
         </Reveal>
       </div>
